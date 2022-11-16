@@ -8,18 +8,19 @@
 """ Main Program """
 
 import json
-from dataclasses import dataclass
 import os
 import sys
+from dataclasses import dataclass
+from typing import List
 
 import requests
 from bs4 import BeautifulSoup
-from typing import List
+
 
 @dataclass
-class Video:
+class Video :
 
-    title:str
+    title : str
     author:str
     thumbs:int
     description:str
@@ -27,16 +28,6 @@ class Video:
     id:str
     nb_commentaires:int
     commentaires:List[str]
-
-    def __init__(self, nb_commentaires = 5):
-        self.title = ""
-        self.author = ""
-        self.thumbs = 0
-        self.description = ""
-        self.links = []
-        self.id = ""
-        self.nb_commentaires = nb_commentaires
-        self.commentaires = []
         
     def __init__(self, title = "", author = "", thumbs=0, description = "", links = [], id = "0", nb_commentaires = 5, commentaires = []):
         self.title = title
